@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { raleway } from "@/lib/fonts";
+import { Header } from "@/components/header/header"
+import { Footer } from "@/components/footer/footer"
+import { RestaurantList } from "@/components/restaurant/restaurants-list";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${raleway.className} antialiased`}>
+        <Header>
+          <RestaurantList />
+        </Header>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
