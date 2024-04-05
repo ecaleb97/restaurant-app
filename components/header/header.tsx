@@ -24,7 +24,7 @@ export function Header({ children }: RestaurantProps) {
 
   return (
     <header 
-      className={cn(`bg-gray-300/85 flex justify-between items-center px-4
+      className={cn(`bg-lightGray flex justify-between items-center px-4
       fixed top-0 left-0 right-0 z-50 h-16`, {
         "bg-[#2e2925] text-white": isMenuOpen,
       })}

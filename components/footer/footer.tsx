@@ -5,7 +5,7 @@ import { NewsletterForm } from "@/components/newsletter/create-form"
 
 export function Footer() {
   return (
-    <footer className="px-4 w-full py-5">
+    <footer className="px-4 sm:px-10 md:px-20 w-full py-5 lg:pb-20">
       <h2 className="text-center my-20 text-sectionHeading
       text-3xl font-bold">¡Hasta luego teriyaki!</h2>
       <section className="sm:mx-auto max-w-[1500px] w-fit px-6
