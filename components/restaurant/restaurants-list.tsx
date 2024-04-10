@@ -4,7 +4,7 @@ export async function RestaurantList() {
   const restaurants = await getRestaurants()
 
   return (
-    <ul className="my-12 px-4 space-y-6">
+    <ul className="max-w-[1500px] mx-auto my-12 px-4 space-y-6 xl:px-0">
       {
         restaurants.map(restaurant => (
           <li key={restaurant.id} className="space-y-2">

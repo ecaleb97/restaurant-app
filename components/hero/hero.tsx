@@ -5,12 +5,12 @@ import { ImagesCarousel } from "@/components/carousel/carousel"
 
 export function HeroSection() {
   return (
-    <section className="mt-20">
+    <section className="mt-20 max-w-[1300px] mx-auto xl:mt-32">
       <div className="px-5 sm:px-10 md:px-20">
-        <h1 className="font-bold text-pretty text-5xl leading-tight">
+        <h1 className="font-bold text-pretty text-5xl leading-tight xl:text-8xl">
         Un concepto diferente de Menu Buffet {" "}
         </h1>
-        <h1 className="text-5xl font-extralight py-2 leading-tight">
+        <h1 className="text-5xl font-extralight py-2 leading-tight xl:text-8xl">
         o tus platos favoritos a la carta
         </h1>
         <Image
@@ -23,30 +23,37 @@ export function HeroSection() {
         />
       </div>
       
-      <div className="my-5 px-5 sm:px-10 md:px-20">
-        <h2 className="text-3xl font-semibold text-pretty leading-10">
-        Ponte hasta el ramen! Mas de 100 platos sin limites.
-        </h2>
-        <p className="text-balance text-xl leading-8 py-5">
-          Disfruta de toda nuestra carta con una forma original
-          y diferente de pedir tus platos. En nuestros restaurantes,
-          a traves de las tablets instaladas en las mesas, podrás pedir
-          los mas de 100 platos de nuestra carta sin mas limites que el 
-          tuyo propio.
-        </p>
-        <Link 
-          href={"/menu"} 
-          className="text-button text-xl font-extralight flex items-center gap-x-4"
-        >
-          <ArrowRightIcon />
-          Nuestra carta
-        </Link>
+      <div className="my-5 px-5 sm:px-10 md:px-20 md:flex md:items-center
+      md:justify-between md:my-20">
+        <div>
+          <h2 className="text-3xl font-semibold text-pretty leading-10
+          xl:text-5xl xl:font-bold xl:leading-[3.5rem]">
+          Ponte hasta el ramen! Mas de 100 platos sin limites.
+          </h2>
+          <p className="text-balance text-xl leading-8 py-5 xl:py-10 xl:text-2xl
+          xl:leading-10">
+            Disfruta de toda nuestra carta con una forma original
+            y diferente de pedir tus platos. En nuestros restaurantes,
+            a traves de las tablets instaladas en las mesas, podrás pedir
+            los mas de 100 platos de nuestra carta sin mas limites que el 
+            tuyo propio.
+          </p>
+          <Link 
+            href={"/menu"} 
+            className="text-button text-xl font-extralight flex items-center gap-x-4"
+          >
+            <ArrowRightIcon />
+            Nuestra carta
+          </Link>
+        </div>
+        
         <Image
           src={"https://sumorestaurante.com/wp-content/uploads/2020/05/gif400b.gif"}
           alt="Ramen"
           width={320}
           height={320}
           quality={80}
+          className="xl:size-96"
         />
       </div>
       <div className="bg-lightGray my-14 p-10 sm:px-10 md:px-20">
