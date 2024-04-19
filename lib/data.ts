@@ -1,3 +1,5 @@
+import "server-only";
+
 import { db } from "@/lib/db";
 import { unstable_noStore as noStore } from "next/cache";
 
@@ -27,5 +29,33 @@ export async function getRestaurants() {
   } catch(error) {
     console.error(error);
     throw new Error("Failed to fetch restaurants");
+  }
+}
+
+export async function getUserById(id: string) {
+  try {
+    const user = await db.user.findUnique({
+      where: {
+        id: id
+      }
+    })
+    return user;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to find user");
+  }
+}
+
+export async function getAccountByUserId(userId: string) {
+  try {
+    const account = await db.account.findFirst({
+      where: {
+        userId: userId
+      }
+    })
+    return account;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to find account");
   }
 }
