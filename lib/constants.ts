@@ -76,6 +76,6 @@ export const navLinks = [
   },
   {
     name: "Reserva",
-    href: "/reserva"
+    href: "/reservas"
   }
 ]
