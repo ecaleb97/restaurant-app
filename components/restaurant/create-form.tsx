@@ -6,6 +6,7 @@ import { z } from "zod"
 
 import { useTransition } from "react"
 
+import { CardWrapper } from "@/components/card/card-wrapper"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -16,7 +17,6 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { CardWrapper } from "@/components/card/card-wrapper"
 
 import { createRestaurant } from "@/actions/createRestaurant"
 import { createRestaurantFormSchema } from "@/schemas"
