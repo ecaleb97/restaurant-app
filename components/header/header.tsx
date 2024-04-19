@@ -1,20 +1,19 @@
 "use client"
 
-import { Logo } from "@/components/icons/logo"
 import { CloseIcon } from "@/components/icons/close"
-import { ShoppingBagIcon } from "@/components/icons/shopping-bag"
+import { Logo } from "@/components/icons/logo"
 import { MenuIcon } from "@/components/icons/menu"
+import { ShoppingBagIcon } from "@/components/icons/shopping-bag"
 import { NavLinksMobile } from "@/components/nav/nav-links-mobile"
 import Link from "next/link"
 
-import { useState } from "react"
 import { cn } from "@/lib/utils"
+import { useState } from "react"
 
 
 interface RestaurantProps {
   children: React.ReactNode;
 }
-
 
 export function Header({ children }: RestaurantProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -48,7 +47,7 @@ export function Header({ children }: RestaurantProps) {
       {isMenuOpen && (
         <nav className="fixed left-0 right-0 top-16 bottom-0 bg-[#2e2925]
         py-6 px-4 transition-all snap-y snap-mandatory z-50 overflow-scroll">
-          <NavLinksMobile />
+          <NavLinksMobile onClick={() => setIsMenuOpen(false)} />
           {children}
         </nav>
       )}

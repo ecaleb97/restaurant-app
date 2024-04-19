@@ -1,11 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRightIcon } from "@/components/icons/arrow-right"
-import { ImagesCarousel } from "@/components/carousel/carousel"
 
-export function HeroSection() {
+import { MenusCarousel } from "@/components/carousel/menus"
+import { ArrowRightIcon } from "@/components/icons/arrow-right"
+import { RESTAURANT_NAME } from "@/lib/constants"
+import { getRestaurants } from "@/lib/data"
+
+export async function HeroSection() {
+  const restaurants = await getRestaurants()
+
   return (
-    <section className="mt-20 max-w-[1300px] mx-auto xl:mt-32">
+    <main className="mt-20 max-w-[1300px] mx-auto xl:mt-32">
       <div className="px-5 sm:px-10 md:px-20">
         <h1 className="font-bold text-pretty text-5xl leading-tight xl:text-8xl">
         Un concepto diferente de Menu Buffet {" "}
@@ -88,9 +93,30 @@ export function HeroSection() {
           hacernoslo un poco mas facil. Descubrelos ahora y disfruta de ellos en 
           tu SUMO mas cercano!
         </p>
-        <ImagesCarousel />
+        <MenusCarousel />
       </div>
-      
-    </section>
+      <section className="bg-[#282828] px-6 py-14">
+        <h2 className="text-white text-4xl font-bold text-pretty leading-snug">
+          Cuando {`${RESTAURANT_NAME}`} no va a los {" "}
+          {`${RESTAURANT_NAME}`}lovers, los {`${RESTAURANT_NAME}`}lovers 
+          van a {`${RESTAURANT_NAME}`}.
+        </h2>
+        <ul className="text-white py-4">
+          {
+            restaurants.map(restaurant => (
+              <li key={restaurant.id} className="text-xl py-6 font-light">
+                <strong>{restaurant.name}</strong>
+              </li>
+            ))
+          }
+        </ul>
+        <Link 
+          href={"/restaurantes"}
+          className="text-button text-xl font-light float-right"
+        >
+          Ver restaurantes
+        </Link>
+      </section>
+    </main>
   )
 }
