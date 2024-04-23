@@ -9,7 +9,6 @@ export async function Restaurants() {
   const restaurantsInMadrid = restaurants.filter(
     restaurant => restaurant?.state === "Madrid"
   )
-  console.log(restaurantsInMadrid)
   const numberOfRestaurantsInMadrid = restaurantsInMadrid.length
   const restaurantByName = await getRestaurantByName("SUMO Heron Diversia")
 
