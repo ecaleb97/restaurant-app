@@ -31,6 +31,12 @@ const nextConfig = {
         hostname: "sumorestaurante.com",
         port: "",
         pathname: "/wp-content/uploads/2020/05/3cuzco-768x512.jpg"
+      },
+      {
+        protocol: "https",
+        hostname: "sumorestaurante.com",
+        port: "",
+        pathname: "/wp-content/uploads/2023/07/357656002_581674144125116_7022014993314425274_n.jpg"
       }
     ]
   }
