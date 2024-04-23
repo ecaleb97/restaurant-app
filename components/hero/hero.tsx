@@ -1,16 +1,24 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { SignOut } from "@/components/auth/sign-out"
 import { MenusCarousel } from "@/components/carousel/menus"
 import { ArrowRightIcon } from "@/components/icons/arrow-right"
+import { currentUser } from "@/lib/auth"
 import { RESTAURANT_NAME } from "@/lib/constants"
 import { getRestaurants } from "@/lib/data"
 
 export async function HeroSection() {
   const restaurants = await getRestaurants()
+  const user = await currentUser()
 
   return (
     <main className="mt-20 max-w-[1300px] mx-auto xl:mt-32">
+      {
+        user && (
+          <SignOut />
+        )
+      }
       <div className="px-5 sm:px-10 md:px-20">
         <h1 className="font-bold text-pretty text-5xl leading-tight xl:text-8xl">
         Un concepto diferente de Menu Buffet {" "}
@@ -25,6 +33,7 @@ export async function HeroSection() {
           height={350}
           quality={80}
           className="w-full"
+          priority
         />
       </div>
       

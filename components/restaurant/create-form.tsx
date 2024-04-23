@@ -31,6 +31,7 @@ export function CreateRestaurantForm() {
       phone: "",
       zip: "",
       city: "",
+      state: "",
       website: "",
     },
   })
@@ -127,6 +128,23 @@ export function CreateRestaurantForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Cuidad</FormLabel>
+                  <FormControl>
+                    <Input 
+                      {...field}
+                      placeholder="Madrid"
+                      type="text"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="state"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Provincia</FormLabel>
                   <FormControl>
                     <Input 
                       {...field}

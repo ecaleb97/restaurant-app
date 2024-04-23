@@ -1,17 +1,12 @@
-import { signIn } from "@/auth";
+import { login } from "@/actions/login";
 import { CardWrapper } from "@/components/card/card-wrapper";
 import { Button } from "@/components/ui/button";
 
-export async function LoginForm() {
+export function LoginForm() {
   return (
     <CardWrapper title="Sign in">
-      <form action={async () => {
-        "use server"
-        await signIn("github", {
-          redirectTo: "/",
-        })
-      }}>
-        <Button type="submit">Sign in</Button>
+      <form action={login}>
+        <Button type="submit">Sign in with Github</Button>
       </form>
     </CardWrapper>
   )

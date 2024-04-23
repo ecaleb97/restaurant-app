@@ -11,5 +11,6 @@ export const createRestaurantFormSchema = z.object({
   phone: z.string(),
   zip: z.string().length(5),
   city: z.string().min(3).max(50),
+  state: z.string().min(3).max(50),
   website: z.optional(z.string().url()),
 })
